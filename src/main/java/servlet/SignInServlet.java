@@ -29,7 +29,7 @@ public class SignInServlet extends HttpServlet {
         if (user != null && user.getPassword().equals(password)) {
             out.print("Привет " + user.getName());
         }
-        else{
+        else {
             out.println("Такого пользователя в базе нет");
         }
     }

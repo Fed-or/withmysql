@@ -2,7 +2,6 @@ package dao;
 
 import model.User;
 
-import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,6 +12,7 @@ import java.util.Map;
 public class UserDao {
     private static final Map<String, User> USERS = new HashMap<>();
     private static UserDao instance;
+    private Connection connection = DbConnector.connect();
 
     private UserDao() {
     }
@@ -25,7 +25,6 @@ public class UserDao {
     }
 
     public boolean addUser(User user) {
-        Connection connection = DbConnector.connect();
         try {
             Statement statement = connection.createStatement();
             statement.execute("create TABLE IF NOT EXISTS users (id BIGINT not null auto_increment, name VARCHAR(255), password VARCHAR(255), PRIMARY KEY (id));");
@@ -41,7 +40,6 @@ public class UserDao {
 
 
     public User getUser(String name) {
-        Connection connection = DbConnector.connect();
         User user = null;
         try {
             Statement statement = connection.createStatement();
@@ -59,7 +57,6 @@ public class UserDao {
     }
 
     public long getId(String name) {
-        Connection connection = DbConnector.connect();
         long idUser = 1;
         try {
             Statement statement = connection.createStatement();

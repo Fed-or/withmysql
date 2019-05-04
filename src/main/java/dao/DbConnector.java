@@ -1,5 +1,6 @@
 package dao;
 
+import java.nio.channels.NoConnectionPendingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,6 +19,6 @@ public class DbConnector {
         } catch (Exception es) {
             es.printStackTrace();
         }
-        return null;
+        throw new NoConnectionPendingException();
     }
 }
