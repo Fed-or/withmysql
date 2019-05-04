@@ -1,16 +1,23 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Adi
-  Date: 04.05.2019
-  Time: 0:59
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<center>
+  <br>
   <body>
-  $END$
+
+  <form action="signin.jsp" method="post">
+    <input type="submit" value="Войти">
+  </form>
+  <br>
+  ИЛИ
+  <br>
+  <br>
+  <form action="registration.jsp" method="get">
+    <input type="submit" value="Зарегистрироваться">
+  </form>
   </body>
+</center>
 </html>
+
